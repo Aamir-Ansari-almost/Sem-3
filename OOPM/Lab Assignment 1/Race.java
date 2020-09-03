@@ -9,6 +9,7 @@ class Race {
 		float avg=0;
 		int k=0;
 		//input
+		System.out.println("Enter speed of bikers:  ");
 		for(int i=0 ; i<5 ; i++) {
 			speed[i] = sc.nextFloat();
 		}

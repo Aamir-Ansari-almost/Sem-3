@@ -4,7 +4,7 @@
 int stack[MAX];  //Defining stack
 int top;         //Defining top
 
-//Function declaration
+//Function Prototype
 void initialize();
 int isEmpty();
 int isFull();
@@ -88,7 +88,6 @@ void pop(int* popped) {
     *popped = stack[top];
     top--;
     printf("--Popped element is  =>  %d", *popped);
-    return;
 }
 
 void peek(int* peeked) {
@@ -98,7 +97,6 @@ void peek(int* peeked) {
     }
     *peeked = stack[top];
     printf("--Top value is  =>  %d", *peeked);
-    return;
 }
 
 void display() {
@@ -112,11 +110,3 @@ void display() {
         }
     }
 }
-
-
-
-
-
-
-
-

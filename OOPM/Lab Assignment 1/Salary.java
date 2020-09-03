@@ -4,9 +4,12 @@ class Salary {
 	public static void main(String args[]) {
 		Scanner sc = new Scanner(System.in);
 		float basic, da, hra, gross, cca=240, pf, pt=100, deduction, net;
+		System.out.println("Enter employee number :  ");
 		int empno = sc.nextInt();
 		sc.nextLine();
+		System.out.println("Enter employee name :  ");
 		String empname = sc.nextLine();
+		System.out.println("Enter employee's basic income :  ");
 		basic = sc.nextFloat();
 		da = 70*basic/100;
 		hra = 30*basic/100;
