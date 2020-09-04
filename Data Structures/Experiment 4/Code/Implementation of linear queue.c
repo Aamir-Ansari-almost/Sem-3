@@ -8,6 +8,7 @@ int front = -1, rear = -1, deleted;
 void insert(int );
 void del(int* );
 void display();
+void displayTopRear();
 
 int main() {
     int i, choice, item;
@@ -16,7 +17,8 @@ int main() {
         printf("\n* 1. INSERT ");
         printf("\n* 2. DELETE ");
         printf("\n* 3. DISPLAY ");
-        printf("\n* 4. EXIT ");
+        printf("\n* 4. TopRear ");
+        printf("\n* 5. EXIT ");
         printf("\nEnter your choice :  ");
         scanf("%d", &item);
 
@@ -34,6 +36,9 @@ int main() {
                 display();
                 break;
             case 4:
+                displayTopRear();
+                break;
+            case 5:
                 printf("****END****");
                 exit(1);
             default:
@@ -74,3 +79,14 @@ void display() {
         printf("%d, ", queue[i]);
     }
 }
+
+void displayTopRear() {
+    printf("\nTop:  %d,  Rear:  %d", front, rear);
+}
+
+
+
+
+
+
+
