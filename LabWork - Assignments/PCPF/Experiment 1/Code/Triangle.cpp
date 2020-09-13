@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cmath>
-
+// Demonstration of constructor overloading
 using namespace std;
 
 class Triangle {
