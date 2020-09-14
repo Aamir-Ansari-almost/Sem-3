@@ -164,20 +164,3 @@ int main() {
     cout << "Fuel needed :  " << truckObj.fuelNeeded(15) << endl;
     cout << "Distance covered :  " << truckObj.distanceCovered(2) << endl;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

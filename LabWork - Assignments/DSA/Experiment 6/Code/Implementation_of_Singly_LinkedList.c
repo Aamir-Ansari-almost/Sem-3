@@ -42,7 +42,7 @@ void insertAtEnd(int val) {
         ptr->next = newNode;
         newNode->next = NULL;
     }
-    
+
 }
 
 void insertAfterNum(int toInsert, int val) {
@@ -83,7 +83,7 @@ void insertBeforeNum(int toInsert, int val) {
         return;
     }
     ptr = start;
-    
+
     while (ptr->next != prePtr) {
         ptr = ptr->next;
     }
@@ -209,7 +209,7 @@ void updateAtBeginning (int val) {
     if (start == NULL) {
         printf("\nLinked list is empty!");
         return;
-    }  
+    }
     start->data = val;
 }
 
@@ -369,15 +369,14 @@ void concat(int val) {
 int main() {
     int choice, item, pos, val;
     while (1) {
-        printf("Eneter your choice :  ");
         printf("\n*1  Insert at the beginning");
         printf("\n*2  Insert at the end");
         printf("\n*3  Insert after position");
         printf("\n*4  Insert after a given value");
         printf("\n*5  Insert before given value");
-        printf("\n*6  Delete at a particulat position");
+        printf("\n*6  Delete at a particular position");
         printf("\n*7  Delete at beginning");
-        printf("\n*8  Delte value at end");
+        printf("\n*8  Delete value at end");
         printf("\n*9  Delete after a particular value");
         printf("\n*10 Delete before a particular value");
         printf("\n*11 Update the value of given position");
@@ -393,6 +392,7 @@ int main() {
         printf("\n*21 Concat");
         printf("\n*22 EXIT");
         printf("\n");
+        printf("\nEnter your choice :  ");
         scanf("%d", &choice);
 
         switch(choice) {
@@ -444,14 +444,14 @@ int main() {
                 deleteAfterVal(item);
                 break;
             case 10:
-                printf("\nEnter position before which to delete :  ");
+                printf("\nEnter value before which to delete :  ");
                 scanf("%d", &item);
                 deleteBeforeVal(item);
                 break;
             case 11:
                 printf("\nEnter an element to update :  ");
                 scanf("%d", &item);
-                printf("\nEnter position at which to update :  ");
+                printf("\nEnter value at which to update :  ");
                 scanf("%d", &pos);
                 updateBeforeVal(item, pos);
                 break;
@@ -495,10 +495,10 @@ int main() {
                 display();
                 break;
             case 20:
-                printf("\nSorted list is : \n");
                 sort();
+                break;
             case 21:
-                printf("\nEnter an element to concat :  ");
+                printf("\nEnter an element to Concat :  ");
                 scanf("%d", &item);
                 concat(item);
                 break;
