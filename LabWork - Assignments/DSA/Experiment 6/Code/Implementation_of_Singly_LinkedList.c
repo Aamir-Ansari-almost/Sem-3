@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct node {   // declaration of node
+
+struct node {   // declaration for main linked list
     int data;
     struct node *next;
 };
@@ -9,7 +10,36 @@ struct node {   // declaration of node
 struct node *start = NULL;
 
 
-void insertAtBegining(int val) {
+struct nodeTwo {   // Declaration for secondary linked list
+    int dataTwo;
+    struct nodeTwo *nextTwo;
+};
+// Start node of secondary linked list
+struct nodeTwo *startTwo = NULL;
+
+void secondLinkedList() {     // Initialises second linked list with static values
+    // declare nodes
+    struct nodeTwo *newNodeOne;
+    struct nodeTwo *newNodeTwo;
+    struct nodeTwo *newNodeThree;
+    // allocates memory for nodes
+    newNodeOne = (struct nodeTwo *)malloc(sizeof(struct nodeTwo));
+    newNodeTwo = (struct nodeTwo *)malloc(sizeof(struct nodeTwo));
+    newNodeThree = (struct nodeTwo *)malloc(sizeof(struct nodeTwo));
+    // enter data and link the nodes
+    startTwo = newNodeOne;
+    newNodeOne->dataTwo = 4;
+    newNodeOne->nextTwo = newNodeTwo;
+
+    newNodeTwo->dataTwo = 8;
+    newNodeTwo->nextTwo = newNodeThree;
+
+    newNodeThree->dataTwo = 12;
+    newNodeThree->nextTwo = NULL;
+
+}
+
+void insertAtBegining(int val) {    // Inserts node at the begining
     struct node *newNode;
     newNode = (struct node *)malloc(sizeof(struct node));
     newNode->data = val;
@@ -23,11 +53,11 @@ void insertAtBegining(int val) {
     start = newNode;
 }
 
-void insertAtEnd(int val) {
+void insertAtEnd(int val) {     // Inserts at the end
     struct node *newNode;
     newNode = (struct node *)malloc(sizeof(struct node));
     newNode->data = val;
-    if (start == NULL) {
+    if (start == NULL) {    // Entering first node
         start = newNode;
         start->data = newNode->data;
         start->next = NULL;
@@ -45,7 +75,7 @@ void insertAtEnd(int val) {
 
 }
 
-void insertAfterNum(int toInsert, int val) {
+void insertAfterNum(int toInsert, int val) {    // Inserts after a value
     struct node *newNode;
     struct node *temp;  // to store address of next pointer
     struct node *ptr;   // traversing pointer
@@ -55,6 +85,7 @@ void insertAfterNum(int toInsert, int val) {
     while (ptr->data!=val) {    //traverse upto val
         ptr = ptr->next;
     }
+
     temp = ptr->next;       // store address of next node
     ptr->next = newNode;    // change address to address of new node
     newNode->next = temp;   // set address of new node to the following node
@@ -62,36 +93,36 @@ void insertAfterNum(int toInsert, int val) {
     printf("\nValue is not present!");
 }
 
-void insertBeforeNum(int toInsert, int val) {
+void insertBeforeNum(int toInsert, int val) {   // Insert before a value
     if (start == NULL) {
         printf("\nLinked list is empty!");
         return;
     }
+
     struct node *newNode;
     struct node *ptr;
     struct node *prePtr;
-    int count = 0;
-    newNode = (struct node *)malloc(sizeof(struct node));
     ptr = start;
-    while(ptr->next != NULL) {
-        prePtr = ptr;
-        ptr = ptr->next;
-        count++;
-    }
-    if (count == 0) {
-        printf("\nThere is no element before this!");
+    
+    newNode = (struct node *)malloc(sizeof(struct node));
+    newNode->data = toInsert;
+    
+    if  (start->data == val) {  // Inserting before first node
+        start = newNode;
+        newNode->next = ptr;
         return;
     }
-    ptr = start;
 
-    while (ptr->next != prePtr) {
+    while(ptr->data != val) {   // Traversing
+        prePtr = ptr;
         ptr = ptr->next;
     }
-    ptr->next = newNode;
-    newNode->next = prePtr;
+    // Inserting before any node
+    prePtr->next = newNode;
+    newNode->next = ptr;
 }
 
-void insertAfterPos(int toInsert, int pos) {
+void insertAfterPos(int toInsert, int pos) {    // Insert after a given position
     struct node *newNode;
     struct node *temp;  // to store address of next pointer
     struct node *ptr;   // traversing pointer
@@ -109,37 +140,47 @@ void insertAfterPos(int toInsert, int pos) {
     return;
 }
 
-void deleteAtBegining() {
+void deleteAtBegining() {   // Delete element at the begining
     struct node *ptr;
     ptr = start;
     if (start == NULL) {
         printf("\nLinked list is empty!");
         return;
     }
+    if (start->next == NULL) {  // Deleting only remaining first node
+        printf("\nDeleted element is :  %d", ptr->data);
+        start = NULL;
+        return;
+    }
+
+    // Deleting any node
+    printf("\nDeleted element is :  %d", ptr->data);
     ptr = ptr->next;
     start->data = ptr->data;
     start->next = ptr->next;
 }
 
-void deleteAtEnd() {
+void deleteAtEnd() {    // Deletes element at the end
     if (start == NULL) {
         printf("\nLinked list is empty!");
-    }
-    if (start->next == NULL) {  // deleting only remaining node
-        start = NULL;
-        return;
     }
     struct node *ptr;
     struct node *prePtr;
     ptr = start;
-    while (ptr->next != NULL) {
+    if (start->next == NULL) {  // deleting only remaining node
+        printf("\nDeleted element is :  %d", ptr->data);
+        start = NULL;
+        return;
+    }
+    while (ptr->next != NULL) { // Traversing
         prePtr = ptr;
         ptr = ptr->next;
     }
+    printf("\nDeleted element is :  %d", ptr->data);
     prePtr->next = NULL;
 }
 
-void deleteAtPos(int pos) {
+void deleteAtPos(int pos) {     // Deltes node after entered position
     if (start == NULL) {
         printf("\nLinked list is empty!");
         return;
@@ -149,16 +190,30 @@ void deleteAtPos(int pos) {
     int count = 1;
     ptr = start;
     prePtr = ptr;
-    while (count < pos) {
+    if (start->next == NULL) {  // deleting only remaining node
+        printf("\nDeleted element is :  %d", ptr->data);
+        start = NULL;
+        return;
+    }
+    while (count < pos) {   // Traversing
         prePtr = ptr;
         ptr = ptr->next;
         count++;
     }
-    prePtr->next = ptr->next;
-    ptr->next = NULL;
+    if (count == 1) {   // Deleting first node
+        printf("\nDeleted Element is :  %d", ptr->data);
+        start = ptr->next;
+        ptr->next = NULL;
+        free(ptr);
+    } else {    // Deleting any other node
+        printf("\nDeleted Element is :  %d", ptr->data);
+        prePtr->next = ptr->next;
+        ptr->next = NULL;
+        free(ptr);
+    }
 }
 
-void deleteAfterVal(int val) {
+void deleteAfterVal(int val) {   // Deletes after a given value
     if (start == NULL) {
         printf("\nLinked list is empty!");
         return;
@@ -166,46 +221,54 @@ void deleteAfterVal(int val) {
     struct node *ptr = start;
     struct node *postPtr;
 
-    while (ptr->data != val) {
+    while (ptr->data != val) {  // Traversing
         ptr = ptr->next;
     }
     if (ptr->next == NULL) {
         printf("\nThere is no element after this!");
     } else {
+        printf("\nDeleted element is :  %d", ptr->next->data);
         postPtr = ptr->next;
         ptr->next = postPtr->next;
         postPtr->next = NULL;
     }
 }
 
-void deleteBeforeVal(int val) {
+void deleteBeforeVal(int val) {     // Deletes a node before a given value
     if (start == NULL) {
         printf("\nLinked list is empty!");
         return;
     }
     struct node *ptr = start;
-    struct node *prePtr;
-    int count = 0;
-    while (ptr->data != val) {
-        prePtr = ptr;
-        ptr = ptr->next;
-        count++;
-    }
-    if (count == 0) {
-        printf("\nThere is no element before this!");
+    struct node *prePtr = ptr;
+
+    if (start->data == val) {   
+        printf("\nNo node before this!");
         return;
     }
-    ptr = start;
-    while (ptr->next != prePtr) {
-        ptr = ptr->next;
+
+    if (start->next->data == val) {     // If first node is to be deleted
+        printf("\nDeleted element is :  %d", start->data);
+        start = start->next;
+        return;
     }
 
-    ptr->next = prePtr->next;
-    prePtr->next = NULL;
-    free(prePtr);
+    ptr = start;
+    prePtr = ptr;
+    while (ptr->next->data != val) {
+        prePtr = ptr;
+        ptr = ptr->next;
+    }
+    
+    // Deleting any other node
+    printf("\nDeleted element is :  %d", ptr->data);
+    prePtr->next = ptr->next;
+    ptr->next = NULL;
+    free(ptr);
+    
 }
 
-void updateAtBeginning (int val) {
+void updateAtBeginning (int val) {      // Updates value at the start
     if (start == NULL) {
         printf("\nLinked list is empty!");
         return;
@@ -213,7 +276,7 @@ void updateAtBeginning (int val) {
     start->data = val;
 }
 
-void updateAtEnd (int val) {
+void updateAtEnd (int val) {    // Updates value at the end
     if (start == NULL) {
         printf("\nLinked list is empty!");
         return;
@@ -225,7 +288,7 @@ void updateAtEnd (int val) {
     ptr->data = val;
 }
 
-void updateAtPos(int toInsert, int pos) {
+void updateAtPos(int toInsert, int pos) {    // Updates value at the given position
     if (start == NULL) {
         printf("\nLinked list is empty!");
         return;
@@ -239,7 +302,7 @@ void updateAtPos(int toInsert, int pos) {
     ptr->data = toInsert;
 }
 
-void updateAfterVal(int toInsert, int val) {
+void updateAfterVal(int toInsert, int val) {    // Updates after entered value is encountered
     if (start == NULL) {
         printf("\nLinked list is empty!");
         return;
@@ -247,18 +310,18 @@ void updateAfterVal(int toInsert, int val) {
     struct node *ptr = start;
     struct node *postPtr;
 
-    while (ptr->data != val) {
+    while (ptr->data != val) {    // Traversing
         ptr = ptr->next;
     }
-    if (ptr->next == NULL) {
+    if (ptr->next == NULL) {     // If the value is of last node
         printf("\nThere is no element after this!");
-    } else {
+    } else {    // Update any other node
         postPtr = ptr->next;
         postPtr->data = toInsert;
     }
 }
 
-void updateBeforeVal(int toInsert, int val) {
+void updateBeforeVal(int toInsert, int val) {    // Updates before entered value is encounterd
     if (start == NULL) {
         printf("\nLinked list is empty!");
         return;
@@ -266,16 +329,16 @@ void updateBeforeVal(int toInsert, int val) {
     struct node *ptr = start;
     struct node *prePtr;
     int count = 0;
-    while (ptr->data != val) {
+    while (ptr->data != val) {    // Traverse
         prePtr = ptr;
         ptr = ptr->next;
         count++;
     }
-    if (count == 0) {
+    if (count == 0) {    // If value is of first node
         printf("\nThere is no element before this!");
         return;
     }
-
+    // Update any other node
     prePtr->data = toInsert;
 }
 
@@ -298,7 +361,7 @@ void search(int val) {  // Search for element in the array
     printf("\nElement not found!");
 }
 
-void reverse() {
+void reverse() {    // Reverses the list
     struct node *previousNode, *currentNode, *nextNode;
     previousNode = NULL;
     currentNode = nextNode = start;
@@ -311,7 +374,7 @@ void reverse() {
     start = previousNode;
 }
 
-void countNodes() {
+void countNodes() {    // Count nodes in the list
     struct node *ptr = start;
     int count = 1;
     while (ptr->next != NULL) {
@@ -336,7 +399,7 @@ void display() {  // traverse through the list
     printf("%d ", ptr->data);
 }
 
-void sort() {
+void sort() {    // Sorts the list
     struct node *i = start;
     struct node *j = NULL;
     int temp;
@@ -351,23 +414,39 @@ void sort() {
     }
 }
 
-void concat(int val) {
-    struct node *newNode;
-    newNode = (struct node *)malloc(sizeof(struct node));
-    newNode->data = val;
-    if (start == NULL) {    // when 0 nodes are present
-        start = newNode;
-        start->data = newNode->data;
-        start->next = NULL;
+void concat() {
+    struct node *ptr;
+    struct nodeTwo *ptrTwo;
+    ptr = start;
+    while (ptr->next != NULL) {
+        ptr = ptr->next;
+    }
+    ptr->next = (struct node *)startTwo;
+}
+
+void displayListTwo() {
+    
+    struct nodeTwo* ptr;
+    ptr = startTwo;
+    if (ptr == NULL) {
+        printf("\nList is empty!");
         return;
     }
-    newNode->next = start;
-    start = newNode;
+    printf("\n");
+    while (ptr->nextTwo != NULL) {
+        printf("%d  ", ptr->dataTwo);
+        ptr = ptr->nextTwo;
+    }
+    printf("%d ", ptr->dataTwo);
 }
+
+
 
 
 int main() {
     int choice, item, pos, val;
+    // displayListTwo();
+    
     while (1) {
         printf("\n*1  Insert at the beginning");
         printf("\n*2  Insert at the end");
@@ -390,22 +469,26 @@ int main() {
         printf("\n*19 Display");
         printf("\n*20 Sort");
         printf("\n*21 Concat");
-        printf("\n*22 EXIT");
+        printf("\n*22 Merge");
+        printf("\n*23 EXIT");
         printf("\n");
         printf("\nEnter your choice :  ");
         scanf("%d", &choice);
 
         switch(choice) {
+
             case 1:
                 printf("\nEnter an element to add :  ");
                 scanf("%d", &item);
                 insertAtBegining(item);
                 break;
+
             case 2:
                 printf("\nEnter an element to add :  ");
                 scanf("%d", &item);
                 insertAtEnd(item);
                 break;
+
             case 3:
                 printf("\nEnter an element to add :  ");
                 scanf("%d", &item);
@@ -413,6 +496,7 @@ int main() {
                 scanf("%d", &pos);
                 insertAfterPos(item, pos);
                 break;
+
             case 4:
                 printf("\nEnter an element to add :  ");
                 scanf("%d", &item);
@@ -420,6 +504,7 @@ int main() {
                 scanf("%d", &val);
                 insertAfterNum(item, val);
                 break;
+
             case 5:
                 printf("\nEnter an element to add :  ");
                 scanf("%d", &item);
@@ -427,27 +512,33 @@ int main() {
                 scanf("%d", &val);
                 insertBeforeNum(item, val);
                 break;
+
             case 6:
                 printf("\nEnter position from where to delete :  ");
                 scanf("%d", &item);
                 deleteAtPos(item);
                 break;
+
             case 7:
                 deleteAtBegining();
                 break;
+
             case 8:
                 deleteAtEnd();
                 break;
+
             case 9:
                 printf("\nEnter value after which to delete :  ");
                 scanf("%d", &item);
                 deleteAfterVal(item);
                 break;
+
             case 10:
                 printf("\nEnter value before which to delete :  ");
                 scanf("%d", &item);
                 deleteBeforeVal(item);
                 break;
+
             case 11:
                 printf("\nEnter an element to update :  ");
                 scanf("%d", &item);
@@ -455,16 +546,19 @@ int main() {
                 scanf("%d", &pos);
                 updateBeforeVal(item, pos);
                 break;
+                
             case 12:
                 printf("\nEnter an element to update :  ");
                 scanf("%d", &item);
                 updateAtBeginning(item);
                 break;
+
             case 13:
                 printf("\nEnter an element to update :  ");
                 scanf("%d", &item);
                 updateAtEnd(item);
                 break;
+
             case 14:
                 printf("\nEnter an element to update :  ");
                 scanf("%d", &item);
@@ -472,6 +566,7 @@ int main() {
                 scanf("%d", &val);
                 updateAfterVal(item, val);
                 break;
+
             case 15:
                 printf("\nEnter an element to update :  ");
                 scanf("%d", &item);
@@ -479,30 +574,54 @@ int main() {
                 scanf("%d", &val);
                 updateBeforeVal(item, val);
                 break;
+                
             case 16:
                 printf("\nEnter elment to search ");
                 scanf("%d", &item);
                 search(item);
                 break;
+
             case 17:
                 reverse();
                 break;
+
             case 18:
                 countNodes();
                 break;
+
             case 19:
-                printf("\nEnlements in the list are :\n");
+                printf("\nEnlements in the list are :");
                 display();
                 break;
+
             case 20:
                 sort();
                 break;
+
             case 21:
-                printf("\nEnter an element to Concat :  ");
-                scanf("%d", &item);
+                printf("List 1 :  ");
+                display();
+                printf("\nList 2 :  ");
+                secondLinkedList();
+                displayListTwo();
                 concat(item);
+                printf("\nList after concatenation :  ");
+                display();
                 break;
+                
             case 22:
+                printf("List 1 :  ");
+                display();
+                printf("\nList 2 :  ");
+                secondLinkedList();
+                displayListTwo();
+                concat();
+                sort();
+                printf("\nList after merging :  ");
+                display();
+                break;
+
+            case 23:
                 printf("\n***EXITING***\n");
                 exit(1);
                 break;
