@@ -265,7 +265,7 @@ void deleteBeforeVal(int val) {     // Deletes a node before a given value
     prePtr->next = ptr->next;
     ptr->next = NULL;
     free(ptr);
-    
+        
 }
 
 void updateAtBeginning (int val) {      // Updates value at the start
