@@ -70,28 +70,29 @@ int main(){
 
     // Send to different constructors
     switch(n) {
-        case 0: {   // zero
+        case 0: {    // zero
             Triangle myObj;
             myObj.area();
             break;
         }
-        case 1: {   // EQUILATERAL
+        case 1: {    // EQUILATERAL
             Triangle myObj(tempSides[0]);
             myObj.area();
             break;
         }
-        case 2: {   // ISOSCELES
+        case 2: {    // ISOSCELES
             Triangle myObj(tempSides[0], tempSides[1]);
             myObj.area();
             break;
         }
-        case 3: {   // SCALENE
+        case 3: {    // SCALENE
             Triangle myObj(tempSides[0], tempSides[1], tempSides[2]);
             myObj.area();
             break;
         }
-        default:
+        default: {
             cout << "Invalid Input" << endl;
+        }
     }
 
     return 0;
