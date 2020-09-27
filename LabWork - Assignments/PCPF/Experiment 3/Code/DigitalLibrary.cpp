@@ -3,6 +3,7 @@
 
 using namespace std;
 
+// parent class Media
 class Media {
     public:
         // instance variables
@@ -19,6 +20,7 @@ class Media {
 
 };
 
+// sub-class Book
 class Book : public Media {
     public:
         // instance variables
@@ -45,6 +47,7 @@ class Book : public Media {
         }
 };
 
+// sub-class Tape
 class Tape : public Media {
     public:
         // instance variables
@@ -73,7 +76,7 @@ class Tape : public Media {
 
 int main() {
     // object of Book
-    Media* myBook = new Book(1001, 2077, "To sleep in sea of stars", 399.99, 425);
+    Media *myBook = new Book(1001, 2077, "To sleep in sea of stars", 399.99, 425);
     myBook->display();
     
     cout << "*******************************************" << endl;

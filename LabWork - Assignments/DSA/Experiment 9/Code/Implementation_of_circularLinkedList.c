@@ -12,7 +12,7 @@ struct node {
 struct node *end = NULL;
 
 void insertAtBegining(int toInsert) {    // Insert at the begining of list
-    
+
     // declaring, inserting value and allocating memory for new node
     struct node *newNode;
     newNode = (struct node *)malloc(sizeof(struct node));
@@ -28,21 +28,21 @@ void insertAtBegining(int toInsert) {    // Insert at the begining of list
 }
 
 void insertAtEnd(int toInsert) {    // Insert at the end of the list
-    
+
     // declaring, inserting value and allocating memory for new node
     struct node *newNode;
     newNode = (struct node *)malloc(sizeof(struct node));
     newNode->data = toInsert;
-    
+
     if (end == NULL) {    // if first node is to be added
         end = newNode;
         newNode->next = end;
     } else {    // inserting node at the end
-        
+
         // traversing pointer
         struct node *ptr;
         ptr = end->next;
-        
+
         while (ptr->next != end) {
             ptr = ptr->next;
         }
@@ -174,14 +174,14 @@ void deleteAtBeginning() {    // Deletes node at the beginning
         printf("\nList is empty!");
         return;
     }
-    
+
     // traversing pointer
     struct node *ptr = end->next;
     printf("\nDeleted element is :  %d", ptr->data);
 
     // shiftind end->next to second node
     end->next = ptr->next;
-    
+
     if (ptr == end) {    // when only remaining node is deleted
         end = NULL;
     }
@@ -194,7 +194,7 @@ void deleteAtEnd() {    // Deletes node at the end of the linked list
         printf("\nList is empty!");
         return;
     }
-    
+
     // traversing pointer
     struct node *ptr = end->next;
     struct node *prePtr = ptr;
@@ -220,7 +220,7 @@ void deleteBeforeVal(int val) {    // Deletes node before given value (val)
         printf("\nList is empty!");
         return;
     }
-    
+
     // traversing pointer
     struct node *ptr = end->next;
     struct node *prePtr = ptr;
@@ -246,7 +246,7 @@ void deleteAfterVal(int val) {    // Deletes node after value (val) is encounter
         printf("\nList is empty!");
         return;
     }
-    
+
     // traversing pointer
     struct node *ptr = end->next;
     struct node *prePtr = ptr;
@@ -258,7 +258,7 @@ void deleteAfterVal(int val) {    // Deletes node after value (val) is encounter
     }
     prePtr = ptr;
     ptr = ptr->next;
-    
+
     printf("\nDeleted element is :  %d", ptr->data);
 
     if (ptr->next == end->next) {    // last node is deleted
@@ -277,7 +277,7 @@ void deleteAtPosition(int pos) {    // Deletes node at given position
         printf("\nList is empty!");
         return;
     }
-    
+
     // traversing pointer
     struct node *ptr = end->next;
     struct node *prePtr = ptr;
@@ -322,7 +322,7 @@ void updateAtBeginning(int toUpdate) {    // Updates the element at the beginnin
         printf("\nList is Empty!");
         return;
     }
-    
+
     // updation
     end->next->data = toUpdate;
 
@@ -334,7 +334,7 @@ void updateAtEnd(int toUpdate) {    // Updates the element at the end
         printf("\nList is Empty!");
         return;
     }
-    
+
     // updation
     end->data = toUpdate;
 
@@ -459,10 +459,10 @@ void search(int val) {    // Search weather the val is present in the list and p
 }
 
 void display() {    // Displays content of linked list
-    
+
     // traversing pointer
     struct node *ptr;
-    
+
     if (end == NULL) {    // check if list is empty
         printf("\nList is empty!");
         return;
@@ -506,7 +506,7 @@ int main() {
         printf("\n*19  EXIT  ");
         printf("\nEnter your choice :  ");
         scanf("%d", &choice);
-        
+
         switch (choice) {
 
             case 1:
@@ -525,7 +525,7 @@ int main() {
                 printf("\nEnter element to insert :  ");
                 scanf("%d", &toInsert);
                 printf("\nEnter value BEFORE which to insert :  ");
-                scanf("%d", val);
+                scanf("%d", &val);
                 insertBeforeVal(toInsert, val);
                 break;
 
@@ -533,15 +533,15 @@ int main() {
                 printf("\nEnter element to insert :  ");
                 scanf("%d", &toInsert);
                 printf("\nEnter value AFTER which to insert :  ");
-                scanf("%d", val);
-                insertBeforeVal(toInsert, val);
+                scanf("%d", &val);
+                insertAfterVal(toInsert, val);
                 break;
 
             case 5:
                 printf("\nEnter element to insert :  ");
                 scanf("%d", &toInsert);
                 printf("\nEnter POSITION AT which to insert :  ");
-                scanf("%d", pos);
+                scanf("%d", &pos);
                 insertAtPosition(toInsert, pos);
                 break;
 
@@ -555,20 +555,22 @@ int main() {
 
             case 8:
                 printf("\nEnter value BEFORE which to DELETE :  ");
-                scanf("%d", val);
+                scanf("%d", &val);
                 deleteBeforeVal(val);
                 break;
 
             case 9:
                 printf("\nEnter value AFTER which to DELETE :  ");
-                scanf("%d", val);
+                scanf("%d", &val);
                 deleteAfterVal(val);
+                break;
 
             case 10:
                 printf("\nEnter POSITION AT which to DELETE :  ");
-                scanf("%d", pos);
+                scanf("%d", &pos);
                 deleteAtPosition(pos);
-        
+                break;
+
             case 11:
                 printf("\nEnter element to UPDATE :  ");
                 scanf("%d", &toUpdate);
@@ -585,7 +587,7 @@ int main() {
                 printf("\nEnter element to UPDATE :  ");
                 scanf("%d", &toUpdate);
                 printf("\nEnter value BEFORE which to UPDATE :  ");
-                scanf("%d", val);
+                scanf("%d", &val);
                 updateBeforeVal(toUpdate, val);
                 break;
 
@@ -593,7 +595,7 @@ int main() {
                 printf("\nEnter element to UPDATE :  ");
                 scanf("%d", &toUpdate);
                 printf("\nEnter value AFTER which to UPDATE :  ");
-                scanf("%d", val);
+                scanf("%d", &val);
                 updateBeforeVal(toUpdate, val);
                 break;
 
@@ -601,7 +603,7 @@ int main() {
                 printf("\nEnter element to UPDATE :  ");
                 scanf("%d", &toUpdate);
                 printf("\nEnter POSITION AT which to UPDATE :  ");
-                scanf("%d", pos);
+                scanf("%d", &pos);
                 updateAtPosition(toUpdate, pos);
                 break;
 
@@ -609,7 +611,8 @@ int main() {
                 printf("\nEnter a value to SEARCH :  ");
                 scanf("%d", &val);
                 search(val);
-            
+                break;
+
             case 17:
                 printf("\nList contains  %d  elements", countNodes());
                 break;
@@ -623,13 +626,13 @@ int main() {
                 printf("*** E X I T I N G ***");
                 exit(1);
                 break;
-            
+
             default:
                 printf("INVALID INPUT");
         }
 
     }
 
-    return 0; 
+    return 0;
 
 }

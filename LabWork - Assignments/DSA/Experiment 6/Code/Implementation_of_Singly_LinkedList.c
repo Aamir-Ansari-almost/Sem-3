@@ -43,6 +43,7 @@ void insertAtBegining(int val) {    // Inserts node at the begining
     struct node *newNode;
     newNode = (struct node *)malloc(sizeof(struct node));
     newNode->data = val;
+
     if (start == NULL) {    // when 0 nodes are present
         start = newNode;
         start->data = newNode->data;
@@ -57,16 +58,17 @@ void insertAtEnd(int val) {     // Inserts at the end
     struct node *newNode;
     newNode = (struct node *)malloc(sizeof(struct node));
     newNode->data = val;
+
     if (start == NULL) {    // Entering first node
         start = newNode;
         start->data = newNode->data;
         start->next = NULL;
         return;
-    } else {
+    } else {    // inserting node at end
         struct node *ptr;
         ptr = start;
 
-        while (ptr->next != NULL) {
+        while (ptr->next != NULL) {    // traverse upto the last node
             ptr = ptr->next;
         }
         ptr->next = newNode;
@@ -76,6 +78,7 @@ void insertAtEnd(int val) {     // Inserts at the end
 }
 
 void insertAfterNum(int toInsert, int val) {    // Inserts after a value
+
     struct node *newNode;
     struct node *temp;  // to store address of next pointer
     struct node *ptr;   // traversing pointer
@@ -89,8 +92,7 @@ void insertAfterNum(int toInsert, int val) {    // Inserts after a value
     temp = ptr->next;       // store address of next node
     ptr->next = newNode;    // change address to address of new node
     newNode->next = temp;   // set address of new node to the following node
-    return;
-    printf("\nValue is not present!");
+
 }
 
 void insertBeforeNum(int toInsert, int val) {   // Insert before a value
