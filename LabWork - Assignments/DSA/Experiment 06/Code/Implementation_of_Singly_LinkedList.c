@@ -96,10 +96,6 @@ void insertAfterNum(int toInsert, int val) {    // Inserts after a value
 }
 
 void insertBeforeNum(int toInsert, int val) {   // Insert before a value
-    if (start == NULL) {
-        printf("\nLinked list is empty!");
-        return;
-    }
 
     struct node *newNode;
     struct node *ptr;

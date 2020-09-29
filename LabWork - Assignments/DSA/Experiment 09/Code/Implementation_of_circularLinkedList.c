@@ -157,7 +157,7 @@ void insertAtPosition(int toInsert, int pos) {    // inserting after given posit
     if (count == 1) {    // adding new node before first node
         newNode->next = ptr;
         end->next = newNode;
-    } else if (ptr->next == end->next && count < pos) {    // inserting after last node  /* second confition => when the postion is second-last */
+    } else if (ptr->next == end->next && count < pos) {    // inserting after last node  /* second condition => when the postion is second-last */
         newNode->next = end->next;
         end->next = newNode;
         end = newNode;
