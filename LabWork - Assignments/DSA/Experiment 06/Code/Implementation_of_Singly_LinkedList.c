@@ -443,7 +443,6 @@ void displayListTwo() {
 
 int main() {
     int choice, item, pos, val;
-    // displayListTwo();
     
     while (1) {
         printf("\n*1  Insert at the beginning");
@@ -602,7 +601,7 @@ int main() {
                 printf("\nList 2 :  ");
                 secondLinkedList();
                 displayListTwo();
-                concat(item);
+                concat();
                 printf("\nList after concatenation :  ");
                 display();
                 break;

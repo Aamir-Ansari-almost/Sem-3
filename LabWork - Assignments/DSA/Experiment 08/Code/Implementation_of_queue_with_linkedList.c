@@ -19,15 +19,13 @@ void insert(int val) { // insert value at front
     // declare and allocate memory of newNode
     struct node *newNode;
     newNode = (struct node *)malloc(sizeof(struct node));
-
     newNode->data = val;
 
     if (front == NULL && rear == NULL) {    // when first node is added
         front = newNode;
         rear = newNode;
         newNode->next = NULL;
-    }
-    else { // insertion of any other node
+    } else { // insertion of any other node
         rear->next = newNode;
         rear = newNode;
         newNode->next = NULL;

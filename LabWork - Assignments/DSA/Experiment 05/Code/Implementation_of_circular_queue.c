@@ -54,7 +54,7 @@ void insert(int item) {
     if (front==-1 && rear==-1) {    // Empty queue
         front++;
         rear++;
-    } else if (rear == MAX-1) {    // if insertion is at last space, and 0th position is empty
+    } else if (rear == MAX-1) {    // if insertion is at last space and 0th position is empty
         rear = 0;
     } else {    // normal condition
         rear++;
@@ -74,12 +74,12 @@ void del(int* deleted) {
         front = -1;
         rear = -1;
      } else {
-         if (front == MAX-1) {    // when element in the last space is deleted and 0th position is not empty
+        if (front == MAX-1) {    // last element is deleted and 0th position is not empty
             front = 0;
-         } else {    // normal condition
+        } else {    // normal condition
             front++;
-         }
-     }
+        }
+    }
 }
 
 void display() {
