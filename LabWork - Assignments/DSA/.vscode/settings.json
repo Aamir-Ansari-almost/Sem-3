@@ -1,4 +1,122 @@
 {
+    // editor
+    "editor.find.autoFindInSelection": "multiline",
+    "editor.fontFamily": "'Fira Code Medium', 'Consolas', monospace",
+    "editor.fontLigatures": true,
+    "editor.formatOnType": true,
+    "editor.hover.delay": 500,
+    "editor.minimap.renderCharacters": false,
+    "editor.minimap.scale": 2,
+    "editor.minimap.size": "proportional",
+    "editor.quickSuggestions": {
+        "comments": true,
+        "other": true,
+        "strings": true
+    },
+    "editor.quickSuggestionsDelay": 50,
+    "editor.renameOnType": true,
+    "editor.renderWhitespace": "all",
+    // "editor.showFoldingControls": "always",
+    "editor.smoothScrolling": true,
+    "editor.suggest.insertMode": "replace",
+    "editor.suggest.maxVisibleSuggestions": 8,
+    "editor.suggest.statusBar.visible": true,
+    // scm
+    // "scm.defaultViewMode": "tree",
+    //workbench
+    "workbench.editor.highlightModifiedTabs": true, // Material Icon Theme || VSCode simpler Icons with Angular
+    "workbench.list.smoothScrolling": true,
+    "workbench.settings.openDefaultSettings": true,
+    "workbench.settings.useSplitJSON": true,
+    // "workbench.tree.renderIndentGuides": "always",
+    // window
+    "window.doubleClickIconToClose": true,
+    "window.menuBarVisibility": "compact",
+    // files
+    "files.insertFinalNewline": true,
+    // zen mode
+    "zenMode.hideLineNumbers": false,
+    "zenMode.hideTabs": false,
+    // explorer
+    "explorer.compactFolders": false,
+    // search
+    "search.collapseResults": "auto",
+    "search.searchOnTypeDebouncePeriod": 500,
+    "search.showLineNumbers": true,
+    "search.sortOrder": "countDescending",
+    // html
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "html.format.endWithNewline": true,
+    "html.format.wrapAttributes": "force-aligned",
+    "html.format.wrapLineLength": 96,
+    // javascript
+    "javascript.preferences.importModuleSpecifierEnding": "minimal",
+    "javascript.preferences.quoteStyle": "single",
+    "javascript.referencesCodeLens.enabled": true,
+    "javascript.referencesCodeLens.showOnAllFunctions": true,
+    "javascript.suggest.completeFunctionCalls": true,
+    // typescript
+    "typescript.preferences.importModuleSpecifierEnding": "minimal",
+    "typescript.preferences.quoteStyle": "single",
+    "typescript.preferences.useAliasesForRenames": false,
+    "typescript.referencesCodeLens.showOnAllFunctions": true,
+    "typescript.suggest.completeFunctionCalls": true,
+    // css
+    "css.completion.completePropertyWithSemicolon": false,
+    "css.lint.duplicateProperties": "warning",
+    "css.lint.hexColorLength": "warning",
+    "css.lint.important": "warning",
+    // scss
+    "scss.completion.completePropertyWithSemicolon": false,
+    "scss.lint.duplicateProperties": "warning",
+    "scss.lint.float": "warning",
+    "scss.lint.hexColorLength": "warning",
+    "scss.lint.important": "warning",
+    "scssFormatter.singleQuote": true,
+    // breadcrumbs
+    "breadcrumbs.filePath": "last",
+    "breadcrumbs.symbolPath": "last",
+    // emmet
+    "emmet.showSuggestionsAsSnippets": true,
+    // merge conflict
+    "merge-conflict.autoNavigateNextConflict.enabled": true,
+    // scss
+    "scssFormatter.printWidth": 72,
+    // others
+    "markdown.preview.fontFamily": "'Fira Sans', 'Calibri', sans-serif",
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "files.eol": "\r\n",
+    "hediet.vscode-drawio.local-storage": "eyIuZHJhd2lvLWNvbmZpZyI6IntcImxhbmd1YWdlXCI6XCJcIixcImN1c3RvbUZvbnRzXCI6W10sXCJsaWJyYXJpZXNcIjpcImdlbmVyYWxcIixcImN1c3RvbUxpYnJhcmllc1wiOltcIkwuc2NyYXRjaHBhZFwiXSxcInBsdWdpbnNcIjpbXSxcInJlY2VudENvbG9yc1wiOltdLFwiZm9ybWF0V2lkdGhcIjpcIjI0MFwiLFwiY3JlYXRlVGFyZ2V0XCI6ZmFsc2UsXCJwYWdlRm9ybWF0XCI6e1wieFwiOjAsXCJ5XCI6MCxcIndpZHRoXCI6ODI3LFwiaGVpZ2h0XCI6MTE2OX0sXCJzZWFyY2hcIjp0cnVlLFwic2hvd1N0YXJ0U2NyZWVuXCI6dHJ1ZSxcImdyaWRDb2xvclwiOlwiI2QwZDBkMFwiLFwiZGFya0dyaWRDb2xvclwiOlwiIzZlNmU2ZVwiLFwiYXV0b3NhdmVcIjp0cnVlLFwicmVzaXplSW1hZ2VzXCI6bnVsbCxcIm9wZW5Db3VudGVyXCI6MCxcInZlcnNpb25cIjoxOCxcInVuaXRcIjoxLFwiaXNSdWxlck9uXCI6ZmFsc2UsXCJ1aVwiOlwiXCJ9In0=",
+    "javascript.format.semicolons": "remove",
+    "typescript.format.semicolons": "remove",
+    "window.zoomLevel": 0,
+    "editor.fontSize": 16,
+    "C_Cpp.updateChannel": "Insiders",
+    "tabnine.experimentalAutoImports": true,
+    "code-runner.runInTerminal": true,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.colorTheme": "Community Material Theme Ocean High Contrast",
+    "editor.mouseWheelZoom": true,
+    "terminal.integrated.fontWeight": "bold",
+    "workbench.colorCustomizations": {
+        "sideBar.foreground": "#cbd9dc",
+    },
+    "git.enableSmartCommit": true,
+    "git.enableStatusBarSync": false,
+    "gitlens.codeLens.authors.enabled": false,
+    "editor.tokenColorCustomizations": {
+        "comments": "#C69650",
+        "variables": "#FBFCFC"
+    },
+    "files.autoSave": "afterDelay",
+    "extensions.ignoreRecommendations": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "C_Cpp.vcFormat.space.beforeInitializerListOpenBrace": true,
+    "C_Cpp.vcFormat.newLine.scopeBracesOnSeparateLines": true,
+    "editor.semanticTokenColorCustomizations": null,
     "files.associations": {
         "array": "c",
         "deque": "c",

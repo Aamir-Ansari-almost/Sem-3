@@ -438,8 +438,17 @@ void displayListTwo() {
     printf("%d ", ptr->dataTwo);
 }
 
-
-
+void fun() {
+    if (start == NULL) {
+        return;
+    }
+    printf("%d  ", start->data);
+    if (start->next!=NULL) {
+        start = start->next->next;
+        fun();
+    }
+    printf("%d ", start->data);
+}
 
 int main() {
     int choice, item, pos, val;
