@@ -1,3 +1,80 @@
+CREATE TABLE Employee (
+	f_name VARCHAR(30) NOT NULL,
+	m_name VARCHAR(30),
+	l_name VARCHAR(30),
+	ssn BIGINT NOT NULL,
+	dob DATE,
+	addr VARCHAR(50),
+	sex CHAR(1),
+	salary MONEY,
+	super_ssn BIGINT NULL,
+	d_no INT,
+
+	PRIMARY KEY (ssn),
+	FOREIGN KEY (super_ssn) REFERENCES Employee(ssn)
+);
+SELECT * FROM Employee;
+
+CREATE TABLE Department (
+	d_no INT NOT NULL,
+	d_name VARCHAR(20) NOT NULL,
+	mgr_ssn BIGINT,
+	mgr_start_date DATE,
+
+	PRIMARY KEY (d_no),
+	FOREIGN KEY (mgr_ssn) REFERENCES Employee(ssn)
+);
+SELECT * FROM Department;
+
+--Referencing d_no from department table 
+ALTER TABLE Employee
+ADD FOREIGN KEY (d_no) REFERENCES Department(d_no);
+
+CREATE TABLE Department_location (
+	d_no INT NOT NULL,
+	d_location VARCHAR(20) NOT NULL,
+
+	PRIMARY KEY (d_no, d_location),
+	FOREIGN KEY (d_no) REFERENCES Department (d_no)
+);
+SELECT * FROM Department_location;
+
+
+CREATE TABLE Project (
+	p_no INT NOT NULL,
+	p_name VARCHAR(20) NOT NULL,
+	p_location VARCHAR(20) NOT NULL,
+	d_no INT NOT NULL,
+
+	PRIMARY KEY (p_no),
+	FOREIGN KEY (d_no) REFERENCES Department (d_no)
+);
+SELECT * FROM Project;
+
+CREATE TABLE Works_on (
+	e_ssn BIGINT NOT NULL,
+	p_no INT NOT NULL,
+	hours_worked FLOAT,
+	
+	PRIMARY KEY (e_ssn, p_no),
+	FOREIGN KEY (e_ssn) REFERENCES Employee (ssn),
+	FOREIGN KEY (p_no) REFERENCES Project (p_no)
+);
+SELECT * FROM Works_on;
+
+CREATE TABLE Dependant (
+	e_ssn BIGINT NOT NULL,
+	dependent_name VARCHAR(30) NOT NULL,
+	dependent_sex CHAR(1),
+	dependent_dob DATE,
+	dependent_relation VARCHAR(20),
+
+	PRIMARY KEY (e_ssn, dependent_name),
+	FOREIGN KEY (e_ssn) REFERENCES Employee (ssn) 
+);
+SELECT * FROM Dependant;
+
+
 -- Insert value in department table
 INSERT INTO Department (d_no, d_name, mgr_ssn, mgr_start_date)
 VALUES (
@@ -18,16 +95,6 @@ VALUES (
 	NULL,
 	'1981-06-19'
 )
--- deleting mgr_ssn for output
-UPDATE Department SET mgr_ssn = NULL
-WHERE d_no = 5;
-
-UPDATE Department SET mgr_ssn = NULL
-WHERE d_no = 4;
-
-UPDATE Department SET mgr_ssn = NULL
-WHERE d_no = 1;
-
 -- Insert foreign key mgs_ssn in Department Table
 UPDATE Department SET mgr_ssn = 333445555
 WHERE d_no = 5;
@@ -53,7 +120,7 @@ VALUES (
 ),
 (
 	'Franklin', 'T', 'Wong',
-	33344555,
+	333445555,
 	'1955-12-08',
 	'638 Voss, Houston, TX',
 	'M',
@@ -121,28 +188,7 @@ VALUES (
 	NULL,
 	1
 )
--- deleting foreign key for output
-UPDATE Employee SET super_ssn = NULL
-WHERE ssn = 123456789;
-
-UPDATE Employee SET super_ssn = NULL
-WHERE ssn = 333445555;
-
-UPDATE Employee SET super_ssn = NULL
-WHERE ssn = 999887777;
-
-UPDATE Employee SET super_ssn = NULL
-WHERE ssn = 987654321;
-
-UPDATE Employee SET super_ssn = NULL
-WHERE ssn = 666884444;
-
-UPDATE Employee SET super_ssn = NULL
-WHERE ssn = 453453453;
-
-UPDATE Employee SET super_ssn = NULL
-WHERE ssn = 987987987;
-
+ 
 -- Insert foreign key super_ssn in Emplyee table
 UPDATE Employee SET super_ssn = 333445555
 WHERE ssn = 123456789;
