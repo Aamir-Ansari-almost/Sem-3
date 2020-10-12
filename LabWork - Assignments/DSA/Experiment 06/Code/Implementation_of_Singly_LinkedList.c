@@ -60,8 +60,8 @@ void insertAtEnd(int val) {     // Inserts at the end
     newNode->data = val;
 
     if (start == NULL) {    // Entering first node
-        start = newNode;
-        start->data = newNode->data;
+        start = newNode;    
+        // start->data = newNode->data;
         start->next = NULL;
         return;
     } else {    // inserting node at end
@@ -74,7 +74,6 @@ void insertAtEnd(int val) {     // Inserts at the end
         ptr->next = newNode;
         newNode->next = NULL;
     }
-
 }
 
 void insertAfterNum(int toInsert, int val) {    // Inserts after a value
@@ -165,17 +164,17 @@ void deleteAtEnd() {    // Deletes element at the end
     struct node *ptr;
     struct node *prePtr;
     ptr = start;
-    if (start->next == NULL) {  // deleting only remaining node
-        printf("\nDeleted element is :  %d", ptr->data);
-        start = NULL;
-        return;
-    }
     while (ptr->next != NULL) { // Traversing
         prePtr = ptr;
         ptr = ptr->next;
     }
     printf("\nDeleted element is :  %d", ptr->data);
     prePtr->next = NULL;
+    if (start->next == NULL) {  // deleting only remaining node
+        printf("\nDeleted element is :  %d", ptr->data);
+        start = NULL;
+        return;
+    }
 }
 
 void deleteAtPos(int pos) {     // Deltes node after entered position

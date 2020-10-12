@@ -250,7 +250,6 @@ void deleteAtEnd() {    // deletes at end
         ptr->previous->next = NULL;
     }
     free(ptr);
-
 }
 
 void deleteBeforeVal(int val) {    // deletes node before val is encountered
