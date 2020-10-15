@@ -1,0 +1,1 @@
+create view DeptInfo as select e.dno,D_name,avg(sal) as avgsal,count(*) as noofemp  from Employee as e,Dept as d where e.dno=d.Dnum group by e.dno,D_name
