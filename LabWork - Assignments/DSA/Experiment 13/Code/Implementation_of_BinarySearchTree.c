@@ -30,16 +30,53 @@ struct node* insert(struct node *root, int data) {
     }
 }
 
-void preOrderTraversal() {
+void preOrderTraversal(struct node *root) {
+    if (root == NULL) {
+        printf("\nTree is empty!");
+        return;
+    }
 
+    // print the data of the node
+    printf("%d ", root->data);
+
+    // recursion on left sub-tree
+    preOrderTraversal(root->left);
+
+    //recursion on right sub-tree
+    preOrderTraversal(root->right);
 }
 
-void inOrderTraversal() {
+void inOrderTraversal(struct node *root) {
+    if (root == NULL) {
+        printf("\nTree is empty!");
+        return;
+    }
+
+    // recursion on left sub-tree
+    preOrderTraversal(root->left);
+
+    // print the data of the node
+    printf("%d ", root->data);
+
+    //recursion on right sub-tree
+    preOrderTraversal(root->right);
 
 }
 
 void postOrderTraversal() {
+    if (root == NULL) {
+        printf("\nTree is empty!");
+        return;
+    }
 
+    // recursion on left sub-tree
+    preOrderTraversal(root->left);
+
+    //recursion on right sub-tree
+    preOrderTraversal(root->right);
+
+    // print the data of the node
+    printf("%d ", root->data);
 }
 
 int main() {
