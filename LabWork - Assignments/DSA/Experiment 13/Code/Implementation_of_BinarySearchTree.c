@@ -85,7 +85,7 @@ void search(struct node *root, int val) {
         printf("\n%d is present in the tree", val);
         return;
     }
-    if ((root->right == NULL && root->left == NULL) || root == NULL) {    
+    if ((root->right == NULL && root->left == NULL) || root == NULL) {
         printf("\nNot present");
         return;
     }
@@ -164,7 +164,7 @@ void mirrorTree(struct node *root) {
     // get to all nodes of tree
     mirrorTree(root->left);
     mirrorTree(root->right);
-    // swap the pointer
+    // swap the pointers
     temp = root->left;
     root->left = root->right;
     root->right = temp;

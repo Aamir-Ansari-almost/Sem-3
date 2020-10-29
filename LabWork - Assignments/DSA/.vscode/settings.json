@@ -98,7 +98,7 @@
     "code-runner.runInTerminal": true,
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "workbench.colorTheme": "Community Material Theme Ocean High Contrast",
+    "workbench.colorTheme": "Tomorrow Night Bright",
     "editor.mouseWheelZoom": true,
     "terminal.integrated.fontWeight": "bold",
     "workbench.colorCustomizations": {
