@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
-// Declaration of node of tree
-struct node {
+
+struct node {    // stucture of node
     struct node *left;
     int data;
     struct node *right;
+    int height;
 };
 
-// declaring root node
+// declaring root
 struct node *root = NULL;
 
 struct node *findMax(struct node *root) {
@@ -24,31 +25,107 @@ struct node *findMin(struct node *root) {
     return root;
 }
 
+int max (int n1, int n2) {
+    return ((n1 > n2) ? n1 : n2);
+}
+
+int height (struct node *root) {
+    if (root == NULL) {
+        return 0;
+    }
+    return root->height;
+}
+
 struct node *getNewNode(int data) {    // initialises and allocates memory for newNode
     struct node *newNode;
     newNode = (struct node *)malloc(sizeof(struct node));
     newNode->data  = data;
     newNode->left  = NULL;
     newNode->right = NULL;
+    newNode->height = 1;
     return newNode;
 }
 
-struct node *insert(struct node *root, int data) {
-    if (root == NULL) {    // when tree is empty
+int getBalance(struct node *root) {
+    if (root == NULL) {
+        return 0;
+    }
+    return (height(root->left) - height(root->right));
+}
+
+struct node *rightRotate(struct node *root) {
+    struct node *rootLeft = root->left;
+    struct node *rootLeftRight = rootLeft->right;
+
+    // rotation
+    rootLeft->right = root;
+    root->left = rootLeftRight;
+
+    // updation of height
+    root->height = max(height(root->left), height(root->right)) + 1;
+    rootLeft->height = max(height(rootLeft->left), height(rootLeft->right)) + 1;
+
+    // back tracking of root
+    return rootLeft;
+}
+
+struct node *leftRotate(struct node *root) {
+    struct node *rootRight = root->right;
+    struct node *rootRightLeft = rootRight->left;
+
+    // rotation
+    rootRight->left = root;
+    root->right = rootRightLeft;
+
+    // updation of height
+    root->height = max(height(root->left), height(root->right)) + 1;
+    rootRight->height = max(height(rootRight->left), height(rootRight->right)) + 1;
+
+    // back tracking of root
+    return rootRight;
+}
+
+struct node *insert (struct node *root, int data) {    // inserts in the avl tree
+    if (root == NULL) {    // base case
         root = getNewNode(data);
         return root;
     }
-    if (data <= root->data) {    // inserting in left subtree
+    if (data < root->data) {    // insertion in right sub-tree
         root->left = insert(root->left, data);
     }
-    else {    // inserting in right subtree
+    else if (data > root->data) {    // insertion in left sub-tree
         root->right = insert(root->right, data);
     }
-    // returning original root of the tree
+    else {    // return root if value is equal
+        return root;
+    }
+
+    // updating height of ancestor node
+    root->height = max(height(root->left), height(root->right)) + 1;
+
+    // balance factor
+    int balance = getBalance(root);
+    
+    // ROTATIONS
+    if ((balance > 1) && (data < root->left->data)) {    // LEFT-LEFT
+        return rightRotate(root);
+    }
+    else if ((balance < -1) && (data > root->right->data)) {    // RIGHT-RIGHT
+        return leftRotate(root);
+    }
+    else if ((balance > 1) && (data > root->left->data)) {    // LEFT-RIGHT
+        root->left = leftRotate(root->left);
+        return rightRotate(root);
+    }
+    else if ((balance < -1) && (data < root->right->data)) {    // RIGHT-LEFT
+        root->right = rightRotate(root->right);
+        return leftRotate(root);
+    }
     return root;
 }
 
 struct node *delete(struct node *root, int val) {
+    // deletion of node 
     if (root == NULL) {    // empty tree
         return root;
     }
@@ -77,6 +154,27 @@ struct node *delete(struct node *root, int val) {
             root->right = delete (root->right, temp->data);
         }
     }
+    // updation of height
+    root->height = max(height(root->left), height(root->right)) + 1;
+
+    // check balance factor
+    int balance = getBalance(root);
+    
+    // ROTATIONS
+    if ((balance > 1) && (getBalance(root->left)>=0)) {    // LEFT-LEFT
+        return rightRotate(root);
+    }
+    else if ((balance < -1) && (getBalance(root->right)<=0)) {    // RIGHT-RIGHT
+        return leftRotate(root);
+    }
+    else if ((balance > 1) && (getBalance(root->left)<0)) {    // LEFT-RIGHT
+        root->left = leftRotate(root->left);
+        return rightRotate(root);
+    }
+    else if ((balance < -1) && (getBalance(root->right)>0)) {    // RIGHT-LEFT
+        root->right = rightRotate(root->right);
+        return leftRotate(root);
+    }
     return root;
 }
 
@@ -97,19 +195,6 @@ void search(struct node *root, int val) {
     }
 }
 
-int height(struct node *root) {
-    int leftHeight, rightHeight;
-    if (root == NULL) {
-        return 0;
-    }
-    else {
-        leftHeight = height(root->left);
-        rightHeight = height(root->right);
-
-        return (leftHeight > rightHeight) ? leftHeight + 1 : rightHeight + 1;
-    }
-}
-
 int countAllNodes(struct node *root) {
     if (root == NULL) {
         return 0;
@@ -119,98 +204,24 @@ int countAllNodes(struct node *root) {
     }
 }
 
-int countLeafNodes(struct node *root) {
-    if (root == NULL) {
-        return 0;
-    }
-    else if (root->left == NULL && root->right == NULL) {
-        return 1;
-    }
-    else {
-        return countLeafNodes(root->left) + countLeafNodes(root->right);
-    }
-}
-
-int countNonLeafNodes(struct node *root) {
-    return (countAllNodes(root) - countLeafNodes(root));
-}
-
-void mirrorTree(struct node *root) {
+void inOrderTraversal (struct node *root) {
     if (root == NULL) {
         return;
     }
-    struct node *temp = root;
-    // get to all nodes of tree
-    mirrorTree(root->left);
-    mirrorTree(root->right);
-    // swap the pointers
-    temp = root->left;
-    root->left = root->right;
-    root->right = temp;
-}
-
-struct node *deleteCompleteTree(struct node *root) {
-    if (root != NULL) {
-        deleteCompleteTree(root->left);
-        deleteCompleteTree(root->right);
-        free(root);
-        root = NULL;
-    }
-}
-
-void preOrderTraversal(struct node *root) {
-    if (root == NULL) {
-        return;
-    }
-    // print the data of the node
-    printf("%d  ", root->data);
-
-    // recursion on left sub-tree
-    preOrderTraversal(root->left);
-
-    //recursion on right sub-tree
-    preOrderTraversal(root->right);
-}
-
-void inOrderTraversal(struct node *root) {
-    if (root == NULL) {
-        return;
-    }
-    // recursion on left sub-tree
     inOrderTraversal(root->left);
-
-    // print the data of the node
-    printf("%d\n", root->data);
-
-    //recursion on right sub-tree
-    inOrderTraversal(root->right);
-
-}
-
-void postOrderTraversal(struct node *root) {
-    if (root == NULL) {
-        return;
-    }
-    // recursion on left sub-tree
-    postOrderTraversal(root->left);
-
-    //recursion on right sub-tree
-    postOrderTraversal(root->right);
-
-    // print the data of the node
     printf("%d  ", root->data);
+    inOrderTraversal(root->right);
 }
 
-void printTree(struct node *root, int space) {
-    // Base case 
+void display(struct node *root, int space) {
     if (root == NULL) 
         return; 
   
     // Increase distance between levels 
-    space += 5; 
+    space += 7; 
   
     // Process right child first 
-    printTree(root->right, space); 
+    display(root->right, space); 
   
     // Print current node after space 
     printf("\n"); 
@@ -220,11 +231,10 @@ void printTree(struct node *root, int space) {
     printf("%d\n", root->data); 
   
     // Process left child 
-    printTree(root->left, space);
+    display(root->left, space);
 }
 
 int main() {
-
     struct node *temp;
     int data, i, choice, val;
 
@@ -234,17 +244,9 @@ int main() {
         printf("\n(3)  Search");
         printf("\n(4)  Height");
         printf("\n(5)  INORDER");
-        printf("\n(6)  PREORDER");
-        printf("\n(7)  POSTORDER");
-        printf("\n(8)  TOTAL number of nodes");
-        printf("\n(9)  Number of LEAF nodes");
-        printf("\n(10) Number of NON-LEAF nodes");
-        printf("\n(11) Find MIN");
-        printf("\n(12) Find MAX");
-        printf("\n(13) Display");
-        printf("\n(14) Mirror");
-        printf("\n(15) Excise Tree");
-        printf("\n(16) EXIT");
+        printf("\n(6)  TOTAL number of nodes");
+        printf("\n(7)  Display");
+        printf("\n(8)  EXIT");
         printf("\nEnter your choice :  ");
         scanf("%d", &choice);
 
@@ -279,56 +281,14 @@ int main() {
                 break;
 
             case 6:
-                printf("\nPRE-ORDER :  ");
-                preOrderTraversal(root);
-                break;
-
-            case 7:
-                printf("\nPOST-ORDER :  ");
-                postOrderTraversal(root);
-                break;
-
-            case 8:
                 printf("\nTotal number of nodes :  %d", countAllNodes(root));
                 break;
 
-            case 9:
-                printf("\nNumber of LEAF nodes :  %d", countLeafNodes(root));
+            case 7:
+                display(root, 0);
                 break;
 
-            case 10:
-                printf("\nNumber of NON-LEAF nodes :  %d", countNonLeafNodes(root));
-                break;
-
-            case 11:
-                temp = findMin(root);
-                printf("\nMINIMUM in tree :  %d", temp->data);
-                break;
-
-            case 12:
-                temp = findMax(root);
-                printf("\nMAXIMUM in tree :  %d", temp->data);
-                break;
-
-            // case 13:
-            //     printf("\n***TREE***\n");
-            //     printCompleteTree(root);
-            //     break;
-            case 13:
-                printTree(root, 0);
-                break;
-
-            case 14:
-                printf("\n***MIRROR***\n");
-                mirrorTree(root);
-                printCompleteTree(root);
-                break;
-
-            case 15:
-                deleteCompleteTree(root);
-                printf("\nEntire tree is deleted! you happy now, huh?");
-                break;
-            case 16:
+            case 8:
                 printf("\n*** E X I T I N G ***\n");
                 exit(1);
                 break;
@@ -339,5 +299,4 @@ int main() {
     }
     return 0;
 }
-
 
