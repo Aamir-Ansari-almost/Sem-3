@@ -154,6 +154,10 @@ struct node *delete(struct node *root, int val) {
             root->right = delete (root->right, temp->data);
         }
     }
+    if (root == NULL) {
+        return root;
+    }
+    
     // updation of height
     root->height = max(height(root->left), height(root->right)) + 1;
 

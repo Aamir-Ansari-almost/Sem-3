@@ -5,8 +5,8 @@ class InvalidPasswordException extends Exception {
     // data member
     int conditionViolated = 0;
     // constructor
-    public InvalidPasswordException(int condition) {
-        super("Invalic Password: ");
+    public string InvalidPasswordException(int condition) {
+        super("Invalid Password: ");
         conditionViolated = condition;
     }
 

@@ -49,6 +49,7 @@ struct node *insert(struct node *root, int data) {
 }
 
 struct node *delete(struct node *root, int val) {
+
     if (root == NULL) {    // empty tree
         return root;
     }
@@ -312,7 +313,7 @@ int main() {
 
             // case 13:
             //     printf("\n***TREE***\n");
-            //     printCompleteTree(root);
+            //     printTree(root);
             //     break;
             case 13:
                 printTree(root, 0);
@@ -321,7 +322,7 @@ int main() {
             case 14:
                 printf("\n***MIRROR***\n");
                 mirrorTree(root);
-                printCompleteTree(root);
+                printTree(root, 0);
                 break;
 
             case 15:
