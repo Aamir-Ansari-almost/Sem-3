@@ -9,6 +9,8 @@ struct node {   // declaration for main linked list
 //Start node
 struct node *start = NULL;
 
+struct node *end = NULL;
+
 
 struct nodeTwo {   // Declaration for secondary linked list
     int dataTwo;
@@ -73,6 +75,23 @@ void insertAtEnd(int val) {     // Inserts at the end
         }
         ptr->next = newNode;
         newNode->next = NULL;
+    }
+}
+
+void insertAtEndYes(int val) {     // Inserts at the end
+    struct node *newNode;
+    newNode = (struct node *)malloc(sizeof(struct node));
+    newNode->data = val;
+
+    if (start == NULL) {    // Entering first node
+        start = newNode;    
+        // start->data = newNode->data;
+        start->next = NULL;
+        end = start;
+    } else {    // inserting node at end
+        end->next = newNode;
+        newNode->next = NULL;
+        end = newNode;
     }
 }
 
@@ -450,9 +469,17 @@ void fun() {
 }
 
 int main() {
-    int choice, item, pos, val;
-    
-    while (1) {
+    // int choice, item, pos, val;
+
+    insertAtEndYes(5);
+    insertAtEndYes(10);
+    insertAtEndYes(15);
+    insertAtEndYes(20);
+    insertAtEndYes(25);
+    insertAtEndYes(30);
+    insertAtEndYes(35);
+    display();
+    /*while (1) {
         printf("\n*1  Insert at the beginning");
         printf("\n*2  Insert at the end");
         printf("\n*3  Insert after position");
@@ -635,5 +662,5 @@ int main() {
         }
     }
 
-    return 0;
+    return 0;*/
 }
