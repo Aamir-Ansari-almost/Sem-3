@@ -1,5 +1,5 @@
 # 🧙 Fellowship of engineeRING 🧙 
-Study materials and references focused towards *Semester 3* of 
+Study materials and references focused towards *Semester 3* of B.E (IT department)
 
 ## Table of contents
 - 🌟 ***LabWork - Assignments*** 🌟
@@ -9,14 +9,17 @@ Study materials and references focused towards *Semester 3* of
 - PCPF
 - Applied Mathematics III
 - Principals of Communication
+All the folder *except* `LabWork - Assignments` contains reference materials (practice programs and pdfs)
 
 ## LabWork - Assignments
-Contents of `LabWork - Assignments` are in the following order:
-- *Code*    --> Programs in C
-- *Ouputs*  --> Screenshots on how to run programs
-- *write-up*--> Observations and explanation of process
+Contents of coding subjects i.e. `DBMS`, `DSA`, `JAVA Lab` and `PCPF` of `LabWork - Assignments` are generally in the following order:
+- *code* --> Programs 
+- *ouputs* --> Screenshots on how to run programs
+- *write-up* --> Observations and explanation of process
+
+Theoretical subjects like `AM 3` and `PCOM` contains handwritten material for each contents
   
-- DSA
+# DSA
   - Assignment 01
     - Dijkstra's algorithm
   - Assignemt 02
