@@ -1,7 +1,7 @@
-## 🧙 Fellowship of engineeRING 🧙 
+# 🧙 Fellowship of engineeRING 🧙 
 Study materials and references focused towards *Semester 3* of 
 
-### Table of contents
+## Table of contents
 - 🌟 ***LabWork - Assignments*** 🌟
 - Data structures and algorithms (C) 
 - OOPM (JAVA)
@@ -10,7 +10,7 @@ Study materials and references focused towards *Semester 3* of
 - Applied Mathematics III
 - Principals of Communication
 
-### LabWork - Assignments
+## LabWork - Assignments
 Contents of `LabWork - Assignments` are in the following order:
 - *Code*    --> Programs in C
 - *Ouputs*  --> Screenshots on how to run programs
