@@ -469,17 +469,8 @@ void fun() {
 }
 
 int main() {
-    // int choice, item, pos, val;
-
-    insertAtEndYes(5);
-    insertAtEndYes(10);
-    insertAtEndYes(15);
-    insertAtEndYes(20);
-    insertAtEndYes(25);
-    insertAtEndYes(30);
-    insertAtEndYes(35);
-    display();
-    /*while (1) {
+    int choice, item, pos, val;
+    while (1) {
         printf("\n*1  Insert at the beginning");
         printf("\n*2  Insert at the end");
         printf("\n*3  Insert after position");
@@ -662,5 +653,5 @@ int main() {
         }
     }
 
-    return 0;*/
+    return 0;
 }
