@@ -138,7 +138,7 @@ _PS: Go through write-ups of each experiment for ***Problem statement***_
   - Implementation of ***Procedures***
   - Implementation of ***Function***
 
-### 3. 📝 PCPF
+### 4. 📝 PCPF
 
 _PS: Go through write-ups of each experiment for ***Problem statement***_ 
 - Assignment 01
@@ -180,3 +180,11 @@ _PS: Go through write-ups of each experiment for ***Problem statement***_
   - ***Prolog***
     - Illustration of **Facts** and **Rules**
     - Find length of the list
+
+### 5. 📝 PCOM
+
+### 6. 📝 AM 3
+
+<hr>
+
+### 📚 Data structures and algorithms (C) 
