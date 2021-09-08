@@ -18,6 +18,7 @@ All the folder *except* `LabWork - Assignments` contains reference materials (pr
 - 📚 Applied Mathematics III
 - 📚 Principals of Communication
 
+<hr>
 ## 🌟LabWork - Assignments 🌟
 Contents of coding subjects i.e. `DBMS`, `DSA`, `JAVA Lab` and `PCPF` of `LabWork - Assignments` are generally in the following order:
 - **code** --> Programs and/or problem statement
@@ -182,9 +183,21 @@ _PS: Go through write-ups of each experiment for ***Problem statement***_
     - Find length of the list
 
 ### 5. 📝 PCOM
+- Assignment 01 : Introduction
+- Assignment 02 : Noise and Fourier representation of signal
+- Assignment 03 : Amplitude moduation
+- Assignment 04 : Pulse modulation
+- Assignment 05 : Multiplexing
 
 ### 6. 📝 AM 3
+- Mini project : Application of Laplace
+- Tutorial
+  - Laplace transform
+  - Inverse of Laplace transform
+  - Fourier series
+  - Complex numbers
 
 <hr>
 
 ### 📚 Data structures and algorithms (C) 
+
