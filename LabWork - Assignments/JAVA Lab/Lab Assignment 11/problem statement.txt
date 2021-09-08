@@ -1,0 +1,1 @@
+Write a Java program to create a simple calculator using java AWT elements. Use a grid layout to arrange buttons for the digits and basic operation +, -, /, *. Add a text field to display the results.

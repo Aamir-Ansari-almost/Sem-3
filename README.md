@@ -20,7 +20,7 @@ All the folder *except* `LabWork - Assignments` contains reference materials (pr
 
 ## 🌟LabWork - Assignments 🌟
 Contents of coding subjects i.e. `DBMS`, `DSA`, `JAVA Lab` and `PCPF` of `LabWork - Assignments` are generally in the following order:
-- **code** --> Programs 
+- **code** --> Programs and/or problem statement
 - **ouputs** --> Screenshots on how to run programs
 - **write-up** --> Observations and explanation of process
 
@@ -63,17 +63,40 @@ Theoretical subjects like `AM 3` and `PCOM` contains handwritten material for ea
   - Implementation of ***AVL Tree*** (Self balancing binary search tree)
 - Experiment 15
   - ***Breadth first search*** traversal
-  -  ***Depth first search*** traversal
--  Experiment 16
-  -  Implermentation of ***<u>Binary search</u> algorithm***
--  Experiment 17
-  -  Implementation of ***<u>Selection sort</u> algorithm***
-  -  Implementation of ***<u>Insertion sort</u> algorithm***
--  Experiment 18
-  -  Implementation of ***<u>Merge sort</u> algorithm*** (Divide and conquer)
-  -  Implementation of ***<u>Quick sort</u> algorithm***
+  - ***Depth first search*** traversal
+- Experiment 16
+  - Implermentation of ***<u>Binary search</u> algorithm***
+- Experiment 17
+  - Implementation of ***<u>Selection sort</u> algorithm***
+  - Implementation of ***<u>Insertion sort</u> algorithm***
+- Experiment 18
+  - Implementation of ***<u>Merge sort</u> algorithm*** (Divide and conquer)
+  - Implementation of ***<u>Quick sort</u> algorithm***
 
 ### 2. JAVA Lab
-- 
+- Assignment 01 (class work)
+  - If else ladder
+  - Switch case
+  - Loop
+- Assignment 02 (class work)
+  - Jagged array
+- Lab Assignment 01
+  - Implementation of ***Classes***
+  - Implementation of ***Objects***
+  - Implementation of ***Control stucture***
+- Lab Assignment 02
+  - Constructor
+  - Method overloading 
+  - Array of objects
+- Lab Assignment 03
+- Lab Assignment 04
+- Lab Assignment 05
+- Lab Assignment 06
+- Lab Assignment 07
+- Lab Assignment 08
+- Lab Assignment 09
+- Lab Assignment 10
+- Lab Assignment 11
+- Lab Assignment 12
 
 
