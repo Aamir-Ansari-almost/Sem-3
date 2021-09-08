@@ -13,9 +13,7 @@ All the folder *except* `LabWork - Assignments` contains reference materials (pr
   - 📝 AM 3
 - 📚 Data structures and algorithms (C) 
 - 📚 OOPM (JAVA)
-- 📚 Database management system
 - 📚 PCPF
-- 📚 Applied Mathematics III
 - 📚 Principals of Communication
 
 <hr>
@@ -200,4 +198,15 @@ _PS: Go through write-ups of each experiment for ***Problem statement***_
 <hr>
 
 ### 📚 Data structures and algorithms (C) 
+- Structures practice
+
+### 📚 OOPM (JAVA)
+- 🌟***Module wise PPTs***🌟 Special thanks to Dimple Bohra ma'am
+- Arraylist
+- Jagged array
+- Demo programs
+
+### 📚 PCPF
+- ***Haskell*** demo programs
+- ***Prolog*** demo programs
 
