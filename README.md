@@ -85,18 +85,30 @@ Theoretical subjects like `AM 3` and `PCOM` contains handwritten material for ea
   - Implementation of ***Objects***
   - Implementation of ***Control stucture***
 - Lab Assignment 02
-  - Constructor
-  - Method overloading 
-  - Array of objects
+  - Implementation of ***Constructor***
+  - Implementation of ***Method overloading***
+  - Implementation of ***Array of objects***
 - Lab Assignment 03
+  - Implementation of ***Recursion***
 - Lab Assignment 04
+  - Implementation of ***Inheritence in JAVA*** 
 - Lab Assignment 05
+  - Using ***Final*** variable
 - Lab Assignment 06
+  - Illustration of ***Interface***
 - Lab Assignment 07
+  - Illustration and use of ***Packages***
 - Lab Assignment 08
+  - ***Exception handling***
+  - Implementation of ***User defined exception***
 - Lab Assignment 09
+  - Implementation of ***Multithreading***
+  - Implementation of ***Synchronisation***
 - Lab Assignment 10
+  - Implementation of concepts of ***Abstract Window Toolkit*** (AWT)
 - Lab Assignment 11
+  - Application of AWT (calculator)
 - Lab Assignment 12
+  - Basic illustration of ***Java Swing***
 
 
