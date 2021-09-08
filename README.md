@@ -1,15 +1,22 @@
 # 🧙 Fellowship of engineeRING 🧙 
 Study materials and references focused towards *Semester 3* of B.E (IT department)
 
+All the folder *except* `LabWork - Assignments` contains reference materials (practice programs and pdfs)
+
 ## Table of contents
 - 🌟 ***LabWork - Assignments*** 🌟
-- Data structures and algorithms (C) 
-- OOPM (JAVA)
-- Database management system
-- PCPF
-- Applied Mathematics III
-- Principals of Communication
-All the folder *except* `LabWork - Assignments` contains reference materials (practice programs and pdfs)
+  - 📝 DSA
+  - 📝 JAVA Lab
+  - 📝 DBMS
+  - 📝 PCPF
+  - 📝 PCOM
+  - 📝 AM 3
+- 📚 Data structures and algorithms (C) 
+- 📚 OOPM (JAVA)
+- 📚 Database management system
+- 📚 PCPF
+- 📚 Applied Mathematics III
+- 📚 Principals of Communication
 
 ## LabWork - Assignments
 Contents of coding subjects i.e. `DBMS`, `DSA`, `JAVA Lab` and `PCPF` of `LabWork - Assignments` are generally in the following order:
@@ -65,5 +72,8 @@ Theoretical subjects like `AM 3` and `PCOM` contains handwritten material for ea
  -  Experiment 18
     -  Implementation of ***<u>Merge sort</u> algorithm*** (Divide and conquer)
     -  Implementation of ***<u>Quick sort</u> algorithm***
+
+### 2. JAVA Lab
+
 
 
