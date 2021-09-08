@@ -73,7 +73,7 @@ Theoretical subjects like `AM 3` and `PCOM` contains handwritten material for ea
   - Implementation of ***<u>Merge sort</u> algorithm*** (Divide and conquer)
   - Implementation of ***<u>Quick sort</u> algorithm***
 
-### 2. JAVA Lab
+### 2. 📝 JAVA Lab
 - Assignment 01 (class work)
   - If else ladder
   - Switch case
@@ -111,7 +111,7 @@ Theoretical subjects like `AM 3` and `PCOM` contains handwritten material for ea
 - Lab Assignment 12
   - Basic illustration of ***Java Swing***
 
-### 3. DBMS
+### 3. 📝 DBMS
 
 _PS: Go through write-ups of each experiment for ***Problem statement***_ 
 - Experiment 01
@@ -138,3 +138,45 @@ _PS: Go through write-ups of each experiment for ***Problem statement***_
   - Implementation of ***Procedures***
   - Implementation of ***Function***
 
+### 3. 📝 PCPF
+
+_PS: Go through write-ups of each experiment for ***Problem statement***_ 
+- Assignment 01
+  - Concept of ***Threads*** in java 
+- Assignment 02
+  - Implementation of Exception handling
+  - Types of Exception handling
+- Experiment 01
+  - **OOP** concepts in **C++**
+    - Classes
+    - Objects
+    - Constructor
+    - Constructor overloading
+- Experiment 02
+  - Illustration of Inheritence using ***C++*** 
+- Experiment 03
+  - Dynamic Binding
+  - Runtime polymorphism
+  - Virtual functions
+- Experiment 04
+  - ***Haskell*** using prelude in commadline
+    - Factorial of a number
+    - List comprehension
+    - Square of a number
+    - Converts temperatures in °C to °F
+- Experiment 05
+  - ***Haskell***
+    - Check if number is odd or even
+    - Fibonacci series using recursion
+    - List comprehension
+- Experiment 06
+  - ***Haskell***
+    - conditional expression
+    - guarded equations
+    - pattern matching
+- Experiment 07
+  - ***Prolog*** installation
+- Experiment 08
+  - ***Prolog***
+    - Illustration of **Facts** and **Rules**
+    - Find length of the list
