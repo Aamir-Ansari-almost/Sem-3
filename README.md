@@ -111,4 +111,30 @@ Theoretical subjects like `AM 3` and `PCOM` contains handwritten material for ea
 - Lab Assignment 12
   - Basic illustration of ***Java Swing***
 
+### 3. DBMS
+
+_PS: Go through write-ups of each experiment for ***Problem statement***_ 
+- Experiment 01
+  - Problem statement
+  - ***ER diagram*** 
+- Experiment 02
+  - Mapping ER diagram to ***Relational Schema***
+- Experiment 03
+  - Creating tables using ***SQL***
+- Experiment 04
+  - ***Data Definition Language*** (DDL) commands
+- Experiment 05
+  - Nested queries
+- Experiment 06
+  - Complex queries
+  - Co-related queries
+- Experiment 07
+  - Implementation of ***View***
+- Experiment 08
+  - Illustration of ***Joins***
+    - Inner join
+    - Outer join
+- Experiment 09
+  - Implementation of ***Procedures***
+  - Implementation of ***Function***
 
