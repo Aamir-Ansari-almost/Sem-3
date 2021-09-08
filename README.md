@@ -27,9 +27,9 @@ Theoretical subjects like `AM 3` and `PCOM` contains handwritten material for ea
   - Experiment 01
     - Implementation of ***Stack***
   - Experiment 02
-    - Evaluation of <u>_Infix_</u> expression using ***Stack***
-    - Evaluation of <u>_Postfix_</u> expression using ***Stack***
-    - Evaluation of <u>_Prefic_</u> expression using ***Stack***
+    - Evaluation of <u>***Infix***</u> expression using ***Stack***
+    - Evaluation of <u>***Postfix***</u> expression using ***Stack***
+    - Evaluation of <u>***Prefic***</u> expression using ***Stack***
   - Experiment 03
     - <u>_Infix_</u> expression to <u>_postfix_</u> expression using ***Stack***
   - Experiment 04
