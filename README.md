@@ -5,17 +5,17 @@ All the folder *except* `LabWork - Assignments` contains reference materials (pr
 
 ## Table of contents
 - [🌟 ***LabWork - Assignments*** 🌟](https://github.com/Aamir-Ansari-almost/Sem-3#labwork---assignments-)
-  - [📝 DSA](https://github.com/Aamir-Ansari-almost/Sem-3#1--dsa)
-  - [📝 JAVA Lab](https://github.com/Aamir-Ansari-almost/Sem-3#2--java-lab)
-  - [📝 DBMS](https://github.com/Aamir-Ansari-almost/Sem-3#3--dbms)
-  - [📝 PCPF](https://github.com/Aamir-Ansari-almost/Sem-3#4--pcpf)
-  - [📝 PCOM](https://github.com/Aamir-Ansari-almost/Sem-3#5--pcom)
-  - [📝 AM 3](https://github.com/Aamir-Ansari-almost/Sem-3#6--am-3)
+  - 📝 [DSA](https://github.com/Aamir-Ansari-almost/Sem-3#1--dsa)
+  - 📝 [JAVA Lab](https://github.com/Aamir-Ansari-almost/Sem-3#2--java-lab)
+  - 📝 [DBMS](https://github.com/Aamir-Ansari-almost/Sem-3#3--dbms)
+  - 📝 [PCPF](https://github.com/Aamir-Ansari-almost/Sem-3#4--pcpf)
+  - 📝 [PCOM](https://github.com/Aamir-Ansari-almost/Sem-3#5--pcom)
+  - 📝 [AM 3](https://github.com/Aamir-Ansari-almost/Sem-3#6--am-3)
 - 📚 [Data structures and algorithms (C)](https://github.com/Aamir-Ansari-almost/Sem-3#-data-structures-and-algorithms-c)
 - 📚 [OOPM (JAVA)](https://github.com/Aamir-Ansari-almost/Sem-3#-oopm-java)
 - 📚 [PCPF](https://github.com/Aamir-Ansari-almost/Sem-3#-pcpf)
 - 📚 [Principals of Communication](https://github.com/Aamir-Ansari-almost/Sem-3#-reference-books)
-- 📚 [Reference books]()
+- 📚 [Reference books](https://github.com/Aamir-Ansari-almost/Sem-3#-reference-books)
 
 ---
 ## 🌟LabWork - Assignments 🌟
@@ -212,4 +212,4 @@ _PS: Go through write-ups of each experiment for ***Problem statement***_
 - ***Prolog*** demo programs
 
 ### 📚 Reference books
-pss... For more reference materials, [click here!!](https://drive.google.com/drive/folders/1h31pjEf-8ejAZDSPd4SDFGrgi7ea4UAQ?usp=sharing) 
+pss... For more reference materials, <a href="https://drive.google.com/drive/folders/1h31pjEf-8ejAZDSPd4SDFGrgi7ea4UAQ?usp=sharing" target="_blank">Click here!!</a> 
