@@ -4,7 +4,7 @@ Study materials and references focused towards *Semester 3* of B.E (IT departmen
 All the folder *except* `LabWork - Assignments` contains reference materials (practice programs and pdfs)
 
 ## Table of contents
-- 🌟 ***LabWork - Assignments*** 🌟
+- [🌟 ***LabWork - Assignments*** 🌟](https://github.com/Aamir-Ansari-almost/Sem-3#labwork---assignments-)
   - 📝 DSA
   - 📝 JAVA Lab
   - 📝 DBMS
