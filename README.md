@@ -5,17 +5,17 @@ All the folder *except* `LabWork - Assignments` contains reference materials (pr
 
 ## Table of contents
 - [🌟 ***LabWork - Assignments*** 🌟](https://github.com/Aamir-Ansari-almost/Sem-3#labwork---assignments-)
-  - 📝 DSA
-  - 📝 JAVA Lab
-  - 📝 DBMS
-  - 📝 PCPF
-  - 📝 PCOM
-  - 📝 AM 3
-- 📚 Data structures and algorithms (C) 
-- 📚 OOPM (JAVA)
-- 📚 PCPF
-- 📚 Principals of Communication
-- 📚 Reference books
+  - [📝 DSA](https://github.com/Aamir-Ansari-almost/Sem-3#1--dsa)
+  - [📝 JAVA Lab](https://github.com/Aamir-Ansari-almost/Sem-3#2--java-lab)
+  - [📝 DBMS](https://github.com/Aamir-Ansari-almost/Sem-3#3--dbms)
+  - [📝 PCPF](https://github.com/Aamir-Ansari-almost/Sem-3#4--pcpf)
+  - [📝 PCOM](https://github.com/Aamir-Ansari-almost/Sem-3#5--pcom)
+  - [📝 AM 3](https://github.com/Aamir-Ansari-almost/Sem-3#6--am-3)
+- 📚 [Data structures and algorithms (C)](https://github.com/Aamir-Ansari-almost/Sem-3#-data-structures-and-algorithms-c)
+- 📚 [OOPM (JAVA)](https://github.com/Aamir-Ansari-almost/Sem-3#-oopm-java)
+- 📚 [PCPF](https://github.com/Aamir-Ansari-almost/Sem-3#-pcpf)
+- 📚 [Principals of Communication](https://github.com/Aamir-Ansari-almost/Sem-3#-reference-books)
+- 📚 [Reference books]()
 
 ---
 ## 🌟LabWork - Assignments 🌟
