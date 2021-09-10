@@ -1,4 +1,6 @@
 # 🧙 Fellowship of engineeRING 🧙 
+***Please note*** use this just as referene when stuck, simply copying will not help!
+
 Study materials and references focused towards *Semester 3* of B.E (IT department)
 
 All the folder *except* `LabWork - Assignments` contains reference materials (practice programs and pdfs)
