@@ -33,7 +33,7 @@ Theoretical subjects like `AM 3` and `PCOM` contains handwritten material for ea
   - Dijkstra's algorithm
 - Assignemt 02
   - Recursion
-- [Experiment 01](https://github.com/Aamir-Ansari-almost/Sem-3/tree/master/LabWork%20-%20Assignments/DSA/Experiment%2001){:target="_blank"}
+- [Experiment 01](https://github.com/Aamir-Ansari-almost/Sem-3/tree/master/LabWork%20-%20Assignments/DSA/Experiment%2001)
   - Implementation of ***Stack***
 - Experiment 02
   - Evaluation of <u>***Infix***</u> expression using ***Stack***
