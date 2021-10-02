@@ -214,4 +214,4 @@ _PS: Go through `write-ups` of each experiment for ***Problem statement***_
 - ***Prolog*** demo programs
 
 ### 📚 Reference books
-pss... For more reference materials, <a href="https://drive.google.com/drive/folders/1h31pjEf-8ejAZDSPd4SDFGrgi7ea4UAQ?usp=sharing" target="_blank">Click here!!</a> 
+psst... For more reference materials, <a href="https://drive.google.com/drive/folders/1h31pjEf-8ejAZDSPd4SDFGrgi7ea4UAQ?usp=sharing" target="_blank">Click here!!</a> 
